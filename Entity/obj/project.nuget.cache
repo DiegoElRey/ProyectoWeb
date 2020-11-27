@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fehpSgIWkbzIOCYpqkRCkSbVm1TVB/mXgn5rblsM5qEaPJJOHRyHAjQOxqUQjUTrhpg2POngBlLTjfsHqW3nLg==",
+  "dgSpecHash": "lHcq95cje9N7fVZ89AI1IbmtLwkFSUCanKZzmOcQx78XVNfv4Hap7l8KQtL08l/6pr0+cP8dM+aiI4aD4LNwyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Osuka\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    "C:\\Users\\Dasp2\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

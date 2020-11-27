@@ -30,7 +30,8 @@
 
             </div>
             <div class="card-footer">
-                <button style=" position: relative; left: -6%;"  routerLink='/reserva/{{habitacion.idHabitacion}}' type="button" class="border border-primary btn-lg btn-block">
+                <button *ngIf="habitacion.idHabitacion" style=" position: relative; left: -6%;"  routerLink='/reservaregistro/{{habitacion.IdHabitacion}}' type="button" class="border border-primary btn-lg btn-block">
+                    
                     <h2>
                         Reservar
                     </h2>

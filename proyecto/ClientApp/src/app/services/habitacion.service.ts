@@ -1,9 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { Habitacion } from '../hotel/models/habitacion';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +32,14 @@ export class HabitacionService {
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<Habitacion>('Registrar Habitacion', null))
+      );
+  }
+  getId(IdHabitacion: string): Observable<Habitacion> {
+    const url = `${this.baseUrl + 'api/reserva'}/${IdHabitacion}`;
+      return this.http.get<Habitacion>(url, httpOptions)
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos enviados')),
+        catchError(this.handleErrorService.handleError<Habitacion>('Buscar Reserva', null))
       );
   }
 }

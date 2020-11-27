@@ -6910,34 +6910,36 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Osuka\\.nuget\\packages\\": {}
+    "C:\\Users\\Dasp2\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Logica\\Logica.csproj",
+      "projectUniqueName": "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Logica\\Logica.csproj",
       "projectName": "Logica",
-      "projectPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Logica\\Logica.csproj",
-      "packagesPath": "C:\\Users\\Osuka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Logica\\obj\\",
+      "projectPath": "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Logica\\Logica.csproj",
+      "packagesPath": "C:\\Users\\Dasp2\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Logica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Osuka\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Dasp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Datos\\Datos.csproj": {
-              "projectPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Datos\\Datos.csproj"
+            "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Datos\\Datos.csproj": {
+              "projectPath": "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Datos\\Datos.csproj"
             },
-            "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj"
+            "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj"
             }
           }
         }

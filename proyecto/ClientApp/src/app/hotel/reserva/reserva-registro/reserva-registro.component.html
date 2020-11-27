@@ -13,7 +13,7 @@
 
         <div class="form-group">
             <label>Cedula Cliente</label>
-            <input type="input" id="cedula" name="cedula"
+            <input type="text" id="cedula" name="cedula"
                 [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}"
                 formControlName="cedula">
             <div *ngIf="control.cedula.errors" class="invalid-feedback">

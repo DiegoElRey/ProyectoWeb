@@ -3,7 +3,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { HabitacionService } from 'src/app/services/habitacion.service';
 import { ReservaService } from 'src/app/services/reserva.service';
+import { Habitacion } from '../../models/habitacion';
 import { Reserva } from '../../models/reserva';
 
 @Component({
@@ -13,41 +15,40 @@ import { Reserva } from '../../models/reserva';
 })
 export class ReservaRegistroComponent implements OnInit {
   formregistro: FormGroup;
+  habitacion: Habitacion;
   reserva: Reserva;
-  constructor(private reservaService: ReservaService, private rutaActiva: ActivatedRoute, private formBuilder: FormBuilder,
+  habitaciones: Habitacion[];
+  constructor(private habitacionService: HabitacionService,private reservaService: ReservaService, private rutaActiva: ActivatedRoute, private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
   ngOnInit() {
-
-    this.reserva = new Reserva();
-    const id = this.rutaActiva.snapshot.params.identificacion;
-    this.reservaService.getId(id).subscribe(p => {
-      this.reserva = p;
-      this.reserva != null ? alert('Se Consulta la reserva') : alert('Error al Consultar');
+    this.habitacion = new Habitacion();
+    const IdHabitacion = this.rutaActiva.snapshot.params.identificacion;
+    this.habitacionService.getId(IdHabitacion).subscribe(p => {
+      this.habitacion = p;
+      this.habitacion != null ? alert('Se Consulta la habitacion') : alert('Error al Consultar');
     });
 
     this.buildForm();
   }
 
   private buildForm() {
-    this.reserva = new Reserva();
-    this.reserva.IdReserva;
-    this.reserva.Cedula = '';
-    this.reserva.idHabitacion;
-    this.reserva.FechaReserva;
-    this.reserva.FechaEntrada;
-    this.reserva.FechaSalida;
-    this.reserva.Total;
+    // this.habitacion = new Habitacion();
+    // this.habitacion.idHabitacion;
+    // this.habitacion.nPersonas;
+    // this.habitacion.estado;
+    // this.habitacion.precio;
+    // this.habitacion.tipo;
 
-    this.formregistro = this.formBuilder.group({
-      IdReserva: [this.reserva.IdReserva, [Validators.required, Validators.maxLength(4)]],
-      Cedula: [this.reserva.Cedula, [Validators.required, Validators.maxLength(4)]],
-      CodigoHabitacion: [this.reserva.idHabitacion,[Validators.required, Validators.maxLength(4)]],
-      FechaReserva: [this.reserva.FechaReserva, Validators.required],
-      FechaEntrada: [this.reserva.FechaEntrada, Validators.required],
-      FechaSalida: [this.reserva.FechaSalida, Validators.required],
-      Total: [this.reserva.Total, Validators.required],
-    });
+    // this.formregistro = this.formBuilder.group({
+    //   IdReserva: [this.reserva.IdReserva, [Validators.required, Validators.maxLength(4)]],
+    //   Cedula: [this.reserva.Cedula, [Validators.required, Validators.maxLength(4)]],
+    //   CodigoHabitacion: [this.reserva.idHabitacion,[Validators.required, Validators.maxLength(4)]],
+    //   FechaReserva: [this.reserva.FechaReserva, Validators.required],
+    //   FechaEntrada: [this.reserva.FechaEntrada, Validators.required],
+    //   FechaSalida: [this.reserva.FechaSalida, Validators.required],
+    //   Total: [this.reserva.Total, Validators.required],
+    // });
   }
 
   get control() {

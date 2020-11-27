@@ -7,3 +7,12 @@ C:\Users\Osuka\Desktop\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.Assemb
 C:\Users\Osuka\Desktop\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Osuka\Desktop\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.dll
 C:\Users\Osuka\Desktop\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.pdb
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\bin\Debug\netstandard2.1\Entity.deps.json
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\bin\Debug\netstandard2.1\Entity.dll
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\bin\Debug\netstandard2.1\Entity.pdb
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.csprojAssemblyReference.cache
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfoInputs.cache
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfo.cs
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.csproj.CoreCompileInputs.cache
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.dll
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.pdb

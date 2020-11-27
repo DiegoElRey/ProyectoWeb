@@ -10,3 +10,15 @@ C:\Users\Osuka\Desktop\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.csproj.C
 C:\Users\Osuka\Desktop\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
 C:\Users\Osuka\Desktop\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.dll
 C:\Users\Osuka\Desktop\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.pdb
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\bin\Debug\netstandard2.1\Datos.deps.json
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\bin\Debug\netstandard2.1\Datos.dll
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\bin\Debug\netstandard2.1\Datos.pdb
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\bin\Debug\netstandard2.1\Entity.dll
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\bin\Debug\netstandard2.1\Entity.pdb
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.csprojAssemblyReference.cache
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfoInputs.cache
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfo.cs
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.csproj.CoreCompileInputs.cache
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.dll
+c:\Users\Dasp2\Desktop\HotelNeruda\ProyectoWeb\Datos\obj\Debug\netstandard2.1\Datos.pdb

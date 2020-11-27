@@ -29,8 +29,8 @@ export class ReservaService {
       );
   }
 
-  getId(id: string): Observable<Reserva> {
-    const url = `${this.baseUrl + 'api/reserva'}/${id}`;
+  getId(IdHabitacion: string): Observable<Reserva> {
+    const url = `${this.baseUrl + 'api/reserva'}/${IdHabitacion}`;
       return this.http.get<Reserva>(url, httpOptions)
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
