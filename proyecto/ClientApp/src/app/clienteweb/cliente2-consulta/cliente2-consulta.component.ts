@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cliente2-consulta.component.css']
 })
 export class Cliente2ConsultaComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {

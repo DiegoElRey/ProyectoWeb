@@ -13,7 +13,11 @@
     <table class="table table-bordered" id="myTable" *ngIf='empleados && empleados.length'>
         <thead>
             <tr class="thead-dark">
-                <th (click)="sortTable(0)" scope="col">#</th>
+                <th scope="col"><select [(ngModel)]="pageSize">
+                    <option selected>5</option>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option></select></th>
                 <th (click)="sortTable(1)">Cedula >> </th>
                 <th (click)="sortTable(2)">Nombre >></th>
                 <th (click)="sortTable(5)">Apellido >></th>
@@ -27,7 +31,7 @@
             </tr>
         </thead>
         <tbody id="tbodypulsacion" class="table-primary">
-            <tr *ngFor="let empleado of empleados|filtroEmpleado:searchText; index as i ">
+            <tr *ngFor="let empleado of empleados|filtroEmpleado:searchText |slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
                 <td>{{ empleado.cedula}} </td>
                 <td>{{ empleado.nombre }}</td>
@@ -44,4 +48,5 @@
             </tr>
         </tbody>
     </table>
+    <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="empleados.length"></ngb-pagination>
 </div>

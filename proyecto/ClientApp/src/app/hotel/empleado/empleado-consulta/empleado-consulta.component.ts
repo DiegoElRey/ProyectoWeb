@@ -10,6 +10,8 @@ import { Empleado } from '../../models/empleado';
 export class EmpleadoConsultaComponent implements OnInit {
   empleados: Empleado[];
   searchText: string;
+  page = 1;
+  pageSize =5;
   constructor(private empleadoService: EmpleadoService) { }
 
   ngOnInit(){
