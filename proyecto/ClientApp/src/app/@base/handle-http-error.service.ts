@@ -15,6 +15,10 @@ export class HandleHttpErrorService {
       console.error(error);
       if (error.status == "400") {
         this.mostrarEstado400(error);
+      }else if (error.status == "401") {​
+
+        this.mostrarEstado400(error);​
+
       }
       return of(result as T);
     };

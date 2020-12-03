@@ -6,31 +6,32 @@
       <br>
       <img src="assets/userl.png" alt="Avatar" class="avatar">
     </div>
+    <div *ngIf="estado == false;else state">
+      <div class="container">
+        <label for="username"><b>USUARIO</b></label>
+        <input [(ngModel)]="user2.username" type="text" placeholder="INGRESAR USUARIO" name="username" required>
 
-    <div class="container">
-      <label for="uname"><b>USUARIO</b></label>
-      <input type="text" placeholder="INGRESAR USUARIO" name="usuario" required>
-      <label for="tuser"><b>TIPO DE USUARIO</b></label>
-      <select class="browser-default custom-select custom-select-lg mb-3">
-        <option value="seleccionar">Seleccionar</option>
-        <option value="cliente">Administrador</option>
-        <option value="recepcionista">Recepcionista</option>
-        <option value="cliente">Cliente</option>
-      </select>
-      <label for="psw"><b>CONTRASEÑA</b></label>
-      <input type="password" placeholder="INGRESAR CONTRASEÑA" name="contraseña" required>
-      <br><br>
-      <button id="divcontainer2" type="button" style="color: rgb(0, 0, 0)" [routerLink]='["/administracion"]'
-      class="border border-success">Iniciar Sesion</button>
-      <br>
+        <label for="psw"><b>CONTRASEÑA</b></label>
+        <input [(ngModel)]="user2.password" type="password" placeholder="INGRESAR CONTRASEÑA" name="contraseña" required>
+        <br><br>
+        <button id="divcontainer2" type="button" style="color: rgb(0, 0, 0)" (click)="login()"
+          class="border border-success">Iniciar Sesion</button>
+        <br>
+        <div align="center">
+          No tienes una cuenta? registrate!
+        </div>
+        <button id="divcontainer1" type="button" style="color: rgb(0, 0, 0)" [routerLink]='["/registro"]'
+          class="border border-primary">Registrarme</button>
+        <br>
+        <br>
+      </div>
     </div>
+    <ng-template #state>
+      <div *ngIf="user.tipo == 'Administrador'">
+        <app-administracion></app-administracion>
+      </div>
+    </ng-template>
   </form>
-  <br>
-  <div align="center">
-    No tienes una cuenta? registrate!
-  </div>
-  <button id="divcontainer1" type="button" style="color: rgb(0, 0, 0)" [routerLink]='["/registro"]' class="border border-primary" >Registrarme</button>
-  <br>
   <br>
 </div>
 <br>

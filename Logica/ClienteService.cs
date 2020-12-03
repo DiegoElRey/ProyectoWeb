@@ -44,8 +44,8 @@ namespace Logica
 
         public Cliente BuscarxIdentificacion(string cedula)
         {
-            Cliente persona = _context.Clientes.Find(cedula);
-            return persona;
+            Cliente cliente = _context.Clientes.Find(cedula);
+            return cliente;
         }
 
         public string Eliminar(string cedula)

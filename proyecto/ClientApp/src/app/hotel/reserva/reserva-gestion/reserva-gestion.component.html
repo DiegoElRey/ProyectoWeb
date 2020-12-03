@@ -1,44 +1,99 @@
 <title>GESTION RESERVA</title>
-<br> <br>
-<h1>Reservas</h1>
+<br>
+<div class="page-header">
+    <h1><small>Reservas</small></h1>
+  </div>
 <br><br>
-<!-- Card -->
-<div class="card-deck">
-    <div class="row">
-        <div id="cardr" style="left: 5%; background-color:#007bff4f;" class="card"
-            *ngFor="let habitacion of habitaciones ">
+<div class="form-group">
+    <div class="input-group mb-3" style="margin-left: 60px;">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-primary" (click)="BuscarCedula()" type="button" style="color: black !important; margin-right: 0px;"><b>Buscar</b></button>
+        </div>
+        <input type="text" class="form-control" name="idcliente"
+            placeholder="Numero de identificación"
+            style="font-size: 22px; margin-right: 200px; margin-left: 0px; margin-top: 20px;"
+            [(ngModel)]="cliente.idcliente"required />
+    </div>
+</div>
 
-            <!-- Card image -->
-            <div align="center"><img class="card-img-top" style="border-radius: 20px;" src="assets/Hotel2.jpg" alt="Card image cap"></div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="FechaEntrada">FechaEntrada</label>
+            <input type="date" class="form-control" name="FechaEntrada"
+                    [(ngModel)]="reserva.FechaEntrada" required/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="FechaSalida">FechaSalida</label>
+            <input type="date" class="form-control" name="FechaSalida"
+                    [(ngModel)]="reserva.FechaSalida" required/>
+        </div>
+    </div>
+</div>
 
-            <div align="center">
-
-                <h3 class="card-title">Habitacion: #{{habitacion.idHabitacion}}</h3>
-            </div>
-
-
-            <!-- Card content -->
-            <div class="card-body">
-
-                <h3 class="card-title">Tipo de habitacion: {{habitacion.tipo}}</h3>
-
-                <h3 class="card-title">Numero de personas: {{habitacion.nPersonas}}</h3>
-
-                <h3 class="card-title">Precio: {{habitacion.precio}}</h3>
-
-                <h3 class="card-title">Estado: {{habitacion.estado}}</h3>
-
-            </div>
-            <div class="card-footer">
-                <button *ngIf="habitacion.idHabitacion" style=" position: relative; left: -6%;"  routerLink='/reservaregistro/{{habitacion.IdHabitacion}}' type="button" class="border border-primary btn-lg btn-block">
-                    
-                    <h2>
-                        Reservar
-                    </h2>
-                </button>
-            </div>
-
+<div *ngIf="verificar">
+    <div class="col-lg-14 col-md-7" style="margin-left: 58px;">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre"
+                    [(ngModel)]="cliente.nombre" required disabled/>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" name="apellido"
+                    [(ngModel)]="cliente.apellido" required disabled/>
         </div>
     </div>
 </div>
 <br><br>
+<!-- Card -->
+<div *ngIf="verificar">
+    <div class="card-deck" style="margin-left: 40px;">
+        <div class="row">
+            <div id="cardr" style="left: 5%; background-color:#007bff4f;" class="card"
+                *ngFor="let habitacion of habitaciones ">
+
+                <!-- Card image -->
+                <div align="center"><img class="card-img-top" style="border-radius: 20px;" src="assets/Hotel2.jpg"
+                        alt="Card image cap"></div>
+
+                <div align="center">
+
+                    <h3 class="card-title">Habitacion: #{{habitacion.idHabitacion}}</h3>
+                </div>
+
+
+                <!-- Card content -->
+                <div class="card-body">
+
+                    <h3 class="card-title">Tipo de habitacion: {{habitacion.tipo}}</h3>
+
+                    <h3 class="card-title">Numero de personas: {{habitacion.nPersonas}}</h3>
+
+                    <h3 class="card-title">Precio: {{habitacion.precio}}</h3>
+
+                    <h3 class="card-title">Estado: {{habitacion.estado}}</h3>
+
+                </div>
+                <div class="card-footer">
+                    <button *ngIf="habitacion.idHabitacion" style=" border-radius: 10px; margin: 0px;" type="button"
+                        class="border border-primary btn-lg btn-block">
+                        <h2>
+                            Reservar
+                        </h2>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <div *ngIf="verificar">
+        <button class="btn btn-outline-primary" style="margin-left: 76px; color: black !important; border-radius: 10px;" ><b>Registrar</b></button>
+    </div>
+</div>
+<div *ngIf="verificar == false && registrar == true">
+    <label for="mensaje" style="display: flex; margin-left: 76px;">Haga click en registrar</label>
+    <a type="button" class="btn btn-outline-primary" [routerLink]='["/clienteregistro"]' style="margin-left: 76px; color: black !important; border-radius: 10px;" ><b>Registrar</b></a>
+</div>

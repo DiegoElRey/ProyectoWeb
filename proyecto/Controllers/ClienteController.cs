@@ -41,10 +41,10 @@ public class ClienteController : ControllerBase
     }
 
     // GET: api/Persona/5​
-    [HttpGet("{idcliente}")]
-    public ActionResult<ClienteViewModel> Get(string idcliente)
+    [HttpGet("{idCliente}")]
+    public ActionResult<ClienteViewModel> Get(string idCliente)
     {
-        var cliente = _clienteService.BuscarxIdentificacion(idcliente);
+        var cliente = _clienteService.BuscarxIdentificacion(idCliente);
         if (cliente == null) return NotFound();
         var clienteViewModel = new ClienteViewModel(cliente);
         return clienteViewModel;

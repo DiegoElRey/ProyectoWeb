@@ -1,65 +1,6 @@
 <nav id="navcont" style="background-color: #007bff;" class=" navbar navbar-expand-sm">
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">INICIO</a>
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item dropdown multi-level-dropdown">
-        <a href="#" id="menu" data-toggle="dropdown" class="nav-link dropdown-toggle w-100">ADMINISTRACION</a>
-        <ul style="top: 130%;" class="dropdown-menu mt-2 rounded-0 primary-color border-0 z-depth-1">
-          <li class="dropdown-item dropdown-submenu primary-color">
-            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle text-white w-100">GESTION CLIENTE</a>
-            <ul style="top: -7px; left: 102%;"
-              class="dropdown-menu mr-2 rounded-0  primary-color border-0 z-depth-1 r-100 ">
-              <li class="dropdown-item p-0 primary-color">
-                <a class="nav-link  text-white w-100" [routerLink]='["/clienteregistro"]'>Registrar Cliente</a>
-              </li>
-              <li class="dropdown-item p-0 primary-color">
-                <a class="nav-link  text-white w-100" [routerLink]='["/clienteconsulta"]'>Consultar Cliente</a>
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown-item dropdown-submenu primary-color">
-            <a href="#" data-toggle="dropdown" class="nav-link  dropdown-toggle text-white w-100">GESTION RESERVA</a>
-            <ul style="top: 14px; left: 102%;"
-              class="dropdown-menu mr-2 rounded-0  primary-color border-0 z-depth-1 r-100 ">
-              <li class="dropdown-item p-0 primary-color">
-                <a class="nav-link  text-white w-100" [routerLink]='["/reservagestion"]'>Gestion Reserva</a>
-              </li>
-              <li class="dropdown-item p-0 primary-color">
-                <a [routerLink]='["/reservaregistro"]' class="nav-link  text-white w-100" >Registrar Reserva</a>
-              </li>
-              <li class="dropdown-item p-0 primary-color">
-                <a [routerLink]='["/reservaconsulta"]' class="nav-link  text-white w-100">Consultar Reserva</a>
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown-item dropdown-submenu primary-color">
-            <a href="#" data-toggle="dropdown" class="nav-link  dropdown-toggle text-white w-100">GESTION EMPLEADO</a>
-            <ul style="top: 21px; left: 102%;"
-              class="dropdown-menu mr-2 rounded-0  primary-color border-0 z-depth-1 r-100 ">
-              <li class="dropdown-item p-0 primary-color">
-                <a [routerLink]='["/empleadoregistro"]' class="nav-link  text-white w-100">Registrar Empleado</a>
-              </li>
-              <li class="dropdown-item p-0 primary-color">
-                <a [routerLink]='["/empleadoconsulta"]' class="nav-link  text-white w-100">Consultar Empleado</a>
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown-item dropdown-submenu primary-color">
-            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle text-white w-100">GESTION HABITACION</a>
-            <ul style="top: 28px; left: 102%;"
-              class="dropdown-menu mr-2 rounded-0  primary-color border-0 z-depth-1 r-100 ">
-              <li class="dropdown-item p-0 primary-color">
-                <a [routerLink]='["/habitacionregistro"]' class="nav-link text-white w-100">Registrar Habitacion</a>
-              </li>
-              <li class="dropdown-item p-0 primary-color">
-                <a [routerLink]='["/habitacionconsulta"]' class="nav-link text-white w-100">Consultar Habitacion</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-
     <ul id="div03" class="navbar-nav  mt-2 mt-lg-0">
       <li class="btn-group dropleft">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -71,7 +12,7 @@
             Iniciar Sesion
           </a>
           <a class="nav-link primary-color" style="color: white;" href="#">Mi cuenta</a>
-          <a class="nav-link primary-color" style="color: white;" href="#">Cerrar Sesion</a>
+          <a class="nav-link primary-color" style="color: white;" (click)="removeLocal()"chref="#">Cerrar Sesion</a>
         </div>
       </li>
     </ul>

@@ -1,3 +1,4 @@
+import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,7 +25,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegistroLoginComponent } from './login/registro-login/registro-login.component';
 import { FiltroClientePipe } from './pipe/filtro-cliente.pipe';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepicker, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { FiltroEmpleadoPipe } from './pipe/filtro-empleado.pipe';
 import { FiltroHabitacionPipe } from './pipe/filtro-habitacion.pipe';
@@ -83,9 +84,8 @@ import { ReservaConsultaComponent } from './hotel/reserva/reserva-consulta/reser
       { path: 'fetch-data', component: FetchDataComponent },
     ]),
     AppRoutingModule,
-    NgbModule
   ],
-  providers: [],
+  providers: [ {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

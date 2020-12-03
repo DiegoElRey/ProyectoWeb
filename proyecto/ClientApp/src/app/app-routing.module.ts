@@ -21,24 +21,25 @@ import { RegistroLoginComponent } from './login/registro-login/registro-login.co
 import { ReservaRegistroComponent } from './hotel/reserva/reserva-registro/reserva-registro.component';
 import { ReservaConsultaComponent } from './hotel/reserva/reserva-consulta/reserva-consulta.component';
 import { ReservaGestionComponent } from './hotel/reserva/reserva-gestion/reserva-gestion.component';
+import { AuthGuard } from './services/guard.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: 'clienteregistro', component: ClienteRegistroComponent},
-  { path: 'clienteconsulta', component: ClienteConsultaComponent },
-  { path: 'clientegestion', component: ClienteGestionComponent },
-  { path: 'empleadoregistro', component: EmpleadoRegistroComponent},
-  { path: 'empleadoconsulta', component: EmpleadoConsultaComponent },
-  { path: 'empleadogestion', component: EmpleadoGestionComponent },
-  { path: 'reservaregistro', component: ReservaRegistroComponent},
-  { path: 'reservaconsulta', component: ReservaConsultaComponent },
-  { path: 'reservagestion', component: ReservaGestionComponent },
-  { path: 'habitacionregistro', component: HabitacionRegistroComponent},
-  { path: 'habitacionconsulta', component: HabitacionConsultaComponent },
-  { path: 'habitaciongestion', component: HabitacionGestionComponent },
-  { path: 'administracion', component: AdministracionComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'registro', component: RegistroLoginComponent },
+  { path: 'clienteregistro', component: ClienteRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'clienteconsulta', component: ClienteConsultaComponent, canActivate: [AuthGuard] },
+  { path: 'clientegestion', component: ClienteGestionComponent, canActivate: [AuthGuard] },
+  { path: 'empleadoregistro', component: EmpleadoRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'empleadoconsulta', component: EmpleadoConsultaComponent, canActivate: [AuthGuard] },
+  { path: 'empleadogestion', component: EmpleadoGestionComponent, canActivate: [AuthGuard] },
+  { path: 'reservaregistro', component: ReservaRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'reservaconsulta', component: ReservaConsultaComponent, canActivate: [AuthGuard] },
+  { path: 'reservagestion', component: ReservaGestionComponent, canActivate: [AuthGuard] },
+  { path: 'habitacionregistro', component: HabitacionRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'habitacionconsulta', component: HabitacionConsultaComponent, canActivate: [AuthGuard] },
+  { path: 'habitaciongestion', component: HabitacionGestionComponent, canActivate: [AuthGuard] },
+  { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent},
+  { path: 'registro', component: RegistroLoginComponent},
   { path: '', component: HomeComponent}
 ];
 
@@ -49,7 +50,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   exports:[RouterModule]
 })

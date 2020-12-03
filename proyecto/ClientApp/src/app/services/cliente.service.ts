@@ -1,9 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Cliente } from '../hotel/models/cliente';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +34,14 @@ export class ClienteService {
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<Cliente>('Registrar Cliente', null))
+      );
+  }
+  getId(idCliente: string): Observable<Cliente> {
+    const url = `${this.baseUrl + 'api/Cliente'}/${idCliente}`;
+      return this.http.get<Cliente>(url, httpOptions)
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos enviados')),
+        catchError(this.handleErrorService.handleError<Cliente>('Buscar Reserva', null))
       );
   }
 
