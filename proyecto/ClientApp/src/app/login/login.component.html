@@ -1,4 +1,4 @@
-<title>LOGIN</title>
+<!-- <title>LOGIN</title>
 <br>
 <div id="form">
   <form action="/action_page.php" method="post">
@@ -10,10 +10,10 @@
       <div class="container">
         <label for="username"><b>USUARIO</b></label>
         <input [(ngModel)]="user2.username" type="text" placeholder="INGRESAR USUARIO" name="username" required>
-
+-----------
         <label for="psw"><b>CONTRASEÑA</b></label>
         <input [(ngModel)]="user2.password" type="password" placeholder="INGRESAR CONTRASEÑA" name="contraseña" required>
-        <br><br>
+        <br><br>-----------------
         <button id="divcontainer2" type="button" style="color: rgb(0, 0, 0)" (click)="login()"
           class="border border-success">Iniciar Sesion</button>
         <br>
@@ -34,4 +34,62 @@
   </form>
   <br>
 </div>
-<br>
+<br> -->
+<!-- Default form login -->
+<br><br>
+<div class="centrar">
+  <div class="card" style="border-radius: 30px;" id="form">
+    <form class="text-center border border-light p-5" style="border-radius: 30px;">
+      <div>
+        <i class="fas fa-fw fa-users"></i>
+      </div>
+      <p class="h4 mb-4">Iniciar sesión</p>
+      <div *ngIf="estado == false;else state">
+        <div>
+          <!-- Email -->
+
+          <input type="text" id="defaultLoginFormEmail" [(ngModel)]="user2.username" class="form-control mb-4"
+            placeholder="Usuario">
+
+          <!-- Password -->
+          <input type="password" id="defaultLoginFormPassword" [(ngModel)]="user2.password" class="form-control mb-4"
+            placeholder="Contraseña">
+
+          <div class="d-flex justify-content-around">
+            <div>
+              <!-- Forgot password -->
+              <a href="">Has olvidado tu contraseña?</a>
+            </div>
+          </div>
+
+          <!-- Sign in button -->
+          <button style="border-radius: 30px;" (click)="login()" color="info" block="true"
+            class="btn btn-outline-primary" type="button"><b>Iniciar sesión</b></button>
+
+          <!-- Register -->
+            <a type="button" [routerLink]='["/registro"]'><span>¿No eres usuario?. Registrese</span></a>
+        </div>
+      </div>
+      <ng-template #state>
+        <div *ngIf="user.tipo == 'Administrador'">
+          <app-administracion></app-administracion>
+        </div>
+      </ng-template>
+      <!-- Social login -->
+      <p>Visita nuestros sitios en:</p>
+
+      <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-facebook-square"></i>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </form>
+  </div>
+</div>

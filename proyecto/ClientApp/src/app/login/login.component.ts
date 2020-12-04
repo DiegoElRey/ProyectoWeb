@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
     else{
       this.estado = false;
     }
-    this.obtenerUsuario();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   login() {
@@ -50,7 +49,7 @@ export class LoginComponent implements OnInit {
       error => {
           const messageBox = this.modalService.open(AlertModalComponent)
           messageBox.componentInstance.title = "Resultado Operación";
-          messageBox.componentInstance.cuerpo = 'Usuario o Contraseña incorrecta !!! :-)';
+          messageBox.componentInstance.cuerpo = 'Usuario o Contraseña incorrecta!';
         console.log(error.error);
       });
   }
