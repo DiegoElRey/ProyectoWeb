@@ -18,27 +18,6 @@ export class ClienteRegistroComponent implements OnInit {
 
   ngOnInit() {
     this.cliente = new Cliente();
-    this.buildForm();
-  }
-  private buildForm() {
-    this.cliente = new Cliente();
-    this.cliente.cedula = '';
-    this.cliente.nombre = '';
-    this.cliente.apellido = '';
-    this.cliente.sexo = 'seleccionar';
-    this.cliente.email = '';
-    this.cliente.edad;
-    this.cliente.telefono;
-
-    this.formregistro = this.formBuilder.group({
-      cedula: [this.cliente.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
-      nombre: [this.cliente.nombre, Validators.required],
-      apellido: [this.cliente.apellido, Validators.required],
-      sexo: [this.cliente.sexo, [Validators.required, this.ValidaSexo]],
-      edad: [this.cliente.edad, [Validators.required, Validators.min(1)]],
-      email: [this.cliente.email, Validators.required],
-      telefono: [this.cliente.telefono, Validators.required],
-    });
   }
 
   private ValidaCedula(control: AbstractControl) {
@@ -49,8 +28,6 @@ export class ClienteRegistroComponent implements OnInit {
     return null;
   }
 
-
-
   private ValidaSexo(control: AbstractControl) {
     const sexo = control.value;
     if (sexo.toLocaleUpperCase() !== 'MASCULINO' && sexo.toLocaleUpperCase() !== 'FEMENINO') {
@@ -59,19 +36,7 @@ export class ClienteRegistroComponent implements OnInit {
     return null;
   }
 
-  get control() {
-    return this.formregistro.controls;
-  }
-
-  onSubmit() {
-    if (this.formregistro.invalid) {
-      return;
-    }
-    this.add();
-  }
-
   add() {
-    this.cliente = this.formregistro.value;
     this.clienteService.post(this.cliente).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)

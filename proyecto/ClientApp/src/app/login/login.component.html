@@ -1,95 +1,70 @@
-<!-- <title>LOGIN</title>
-<br>
-<div id="form">
-  <form action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <br>
-      <img src="assets/userl.png" alt="Avatar" class="avatar">
-    </div>
-    <div *ngIf="estado == false;else state">
-      <div class="container">
-        <label for="username"><b>USUARIO</b></label>
-        <input [(ngModel)]="user2.username" type="text" placeholder="INGRESAR USUARIO" name="username" required>
------------
-        <label for="psw"><b>CONTRASEÑA</b></label>
-        <input [(ngModel)]="user2.password" type="password" placeholder="INGRESAR CONTRASEÑA" name="contraseña" required>
-        <br><br>-----------------
-        <button id="divcontainer2" type="button" style="color: rgb(0, 0, 0)" (click)="login()"
-          class="border border-success">Iniciar Sesion</button>
-        <br>
-        <div align="center">
-          No tienes una cuenta? registrate!
-        </div>
-        <button id="divcontainer1" type="button" style="color: rgb(0, 0, 0)" [routerLink]='["/registro"]'
-          class="border border-primary">Registrarme</button>
-        <br>
-        <br>
-      </div>
-    </div>
-    <ng-template #state>
-      <div *ngIf="user.tipo == 'Administrador'">
-        <app-administracion></app-administracion>
-      </div>
-    </ng-template>
-  </form>
-  <br>
-</div>
-<br> -->
-<!-- Default form login -->
 <br><br>
 <div class="centrar">
-  <div class="card" style="border-radius: 30px;" id="form">
-    <form class="text-center border border-light p-5" style="border-radius: 30px;">
-      <div>
-        <i class="fas fa-fw fa-users"></i>
-      </div>
-      <p class="h4 mb-4">Iniciar sesión</p>
-      <div *ngIf="estado == false;else state">
-        <div>
-          <!-- Email -->
-
-          <input type="text" id="defaultLoginFormEmail" [(ngModel)]="user2.username" class="form-control mb-4"
-            placeholder="Usuario">
-
-          <!-- Password -->
-          <input type="password" id="defaultLoginFormPassword" [(ngModel)]="user2.password" class="form-control mb-4"
-            placeholder="Contraseña">
-
-          <div class="d-flex justify-content-around">
+    <div class="card" style="border-radius: 30px;" id="form">
+        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate autocomplete="off"
+            class="text-center border border-light p-5" style="border-radius: 30px;" ngModelOptions="standalone">
             <div>
-              <!-- Forgot password -->
-              <a href="">Has olvidado tu contraseña?</a>
+                <i class="fas fa-fw fa-users"></i>
             </div>
-          </div>
+            <p class="h4 mb-4">Iniciar sesión</p>
+            <div *ngIf="estado == false;else state">
+                <div class="container">
+                    <!-- Email -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username"
+                            [(ngModel)]="user2.username" #username="ngModel" placeholder="Usuario"
+                            [ngClass]="{ 'is-invalid': username.touched && username.invalid }" required />
+                        <div *ngIf="username.touched && username.invalid" class="invalid-feedback">
+                            <div *ngIf="username.errors.required">El usuario es requerido</div>
+                        </div>
+                    </div>
 
-          <!-- Sign in button -->
-          <button style="border-radius: 30px;" (click)="login()" color="info" block="true"
-            class="btn btn-outline-primary" type="button"><b>Iniciar sesión</b></button>
+                    <!-- Password -->
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password"
+                            [(ngModel)]="user2.password" #password="ngModel" placeholder="Contraseña"
+                            [ngClass]="{ 'is-invalid': password.touched && password.invalid }" required />
+                        <div *ngIf="password.touched && password.invalid" class="invalid-feedback">
+                            <div *ngIf="password.errors.required">La contraseña es requerida</div>
+                        </div>
+                    </div>
 
-          <!-- Register -->
-            <a type="button" [routerLink]='["/registro"]'><span>¿No eres usuario?. Registrese</span></a>
-        </div>
-      </div>
-      <ng-template #state>
-        <div *ngIf="user.tipo == 'Administrador'">
-          <app-administracion></app-administracion>
-        </div>
-      </ng-template>
-      <!-- Social login -->
-      <p>Visita nuestros sitios en:</p>
 
-      <a type="button" class="light-blue-text mx-2">
-        <i class="fab fa-facebook-square"></i>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </form>
-  </div>
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <!-- Forgot password -->
+                            <a href="">Has olvidado tu contraseña?</a>
+                        </div>
+                    </div>
+
+                    <!-- Sign in button -->
+                    <button style="border-radius: 30px;" class="btn btn-outline-primary" type="submit"
+                        [disabled]="!f.form.valid" ><b>Iniciar sesión</b></button>
+
+                    <!-- Register -->
+                    <a type="button" [routerLink]='["/clienteregistro"]'><span>¿No eres usuario?. Registrate</span></a>
+                </div>
+            </div>
+            <ng-template #state>
+                <div *ngIf="user.tipo == 'Administrador'">
+                    <app-administracion></app-administracion>
+                </div>
+            </ng-template>
+            <!-- Social login -->
+            <p>Visita nuestros sitios en:</p>
+
+            <a type="button" class="light-blue-text mx-2">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </form>
+    </div>
 </div>

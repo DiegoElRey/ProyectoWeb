@@ -1,8 +1,13 @@
-import { JwtInterceptor } from './services/jwt.interceptor';
+import { CommonModule } from '@angular/common';
+import { NgbDatepicker, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+
+import { JwtInterceptor } from './services/jwt.interceptor';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -20,13 +25,8 @@ import { FacturaGestionComponent } from './hotel/factura/factura-gestion/factura
 import { EmpleadoConsultaComponent } from './hotel/empleado/empleado-consulta/empleado-consulta.component';
 import { EmpleadoRegistroComponent } from './hotel/empleado/empleado-registro/empleado-registro.component';
 import { EmpleadoGestionComponent } from './hotel/empleado/empleado-gestion/empleado-gestion.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
-import { RegistroLoginComponent } from './login/registro-login/registro-login.component';
 import { FiltroClientePipe } from './pipe/filtro-cliente.pipe';
-import { NgbDatepicker, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { FiltroEmpleadoPipe } from './pipe/filtro-empleado.pipe';
 import { FiltroHabitacionPipe } from './pipe/filtro-habitacion.pipe';
 import { HabitacionRegistroComponent } from './hotel/habitacion/habitacion-registro/habitacion-registro.component';
@@ -57,7 +57,6 @@ import { ReservaConsultaComponent } from './hotel/reserva/reserva-consulta/reser
     EmpleadoRegistroComponent,
     EmpleadoGestionComponent,
     LoginComponent,
-    RegistroLoginComponent,
     FiltroClientePipe,
     AlertModalComponent,
     FiltroEmpleadoPipe,

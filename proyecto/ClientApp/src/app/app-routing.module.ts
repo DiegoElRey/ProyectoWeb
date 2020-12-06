@@ -17,7 +17,6 @@ import { HabitacionConsultaComponent } from './hotel/habitacion/habitacion-consu
 import { HabitacionGestionComponent } from './hotel/habitacion/habitacion-gestion/habitacion-gestion.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { RegistroLoginComponent } from './login/registro-login/registro-login.component';
 import { ReservaRegistroComponent } from './hotel/reserva/reserva-registro/reserva-registro.component';
 import { ReservaConsultaComponent } from './hotel/reserva/reserva-consulta/reserva-consulta.component';
 import { ReservaGestionComponent } from './hotel/reserva/reserva-gestion/reserva-gestion.component';
@@ -25,7 +24,7 @@ import { AuthGuard } from './services/guard.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: 'clienteregistro', component: ClienteRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'clienteregistro', component: ClienteRegistroComponent},
   { path: 'clienteconsulta', component: ClienteConsultaComponent, canActivate: [AuthGuard] },
   { path: 'clientegestion', component: ClienteGestionComponent, canActivate: [AuthGuard] },
   { path: 'empleadoregistro', component: EmpleadoRegistroComponent, canActivate: [AuthGuard]},
@@ -39,7 +38,6 @@ const routes: Routes = [
   { path: 'habitaciongestion', component: HabitacionGestionComponent, canActivate: [AuthGuard] },
   { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent},
-  { path: 'registro', component: RegistroLoginComponent},
   { path: '', component: HomeComponent}
 ];
 
