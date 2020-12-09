@@ -10,21 +10,25 @@
     position: relative;
     top: -51px;
     left: 110%;
+    font-size: 155%;
     width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   input[type="search"] {
+    font-size: 135%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   a {
+    font-size: 25px;
     
     text-align: center;
     color: #ffffff;
   }
   
   h1 {
+    font-size: 30px;
     
     text-align: center;
     color: #000000;
@@ -37,6 +41,7 @@
 
   #divcontainer2 {
     border-radius: 25px;
+    font-size: 30px;
     width: 98%;
     height: 60px;
     position: relative;
@@ -50,7 +55,9 @@
   #rcorners1 {
     border-radius: 25px;
     padding: 20px;
-    width: 98%;
+    width: 77%;
+    margin-left: 255px;
+    margin-right: 250px;
     position: relative;
     left: 1%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -68,6 +75,7 @@
     border-collapse: collapse;
     position: relative;
     top: 8px;
+    font-size: 25px;
   }
   
   li {
@@ -75,6 +83,7 @@
   }
   
   #Contenedor1 {
+    font-size: 25px;
     
     color: #24009c;
     position: relative;
@@ -96,6 +105,7 @@
     position: relative;
     left: 4%;
     top: -2px;
+    font-size: 25px;
     
     color: #ffffff;
     background-color: #007bff;

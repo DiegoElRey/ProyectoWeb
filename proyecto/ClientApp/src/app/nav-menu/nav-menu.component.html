@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" [routerLink]="['/home']">
         <div>
-            <i class="fas fa-building"> <span style="font-size: 11px; margin-left: 5px;">
+            <i class="fas fa-building"> <span style="font-size: 14px; margin-left: 5px;">
                     NERUDA MAR</span>
             </i>
         </div>
@@ -18,7 +18,7 @@
     <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active">
             <i class="fas fa-bed"></i>
-            <span>a mimir</span></a>
+            <span style="margin-left: 5px;">A MIMIR</span></a>
     </li>
 
     <!-- Divider -->
@@ -35,38 +35,58 @@
             <a class="nav-link collapsed" routerLinkActive="router-link-active" data-toggle="collapse"
                 data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-user"></i>
-                <span>Iniciar sesión</span>
+                <span id="tamaño">Iniciar sesión</span>
             </a>
         </div>
         <div *ngIf="Open">
             <a class="nav-link collapsed" routerLinkActive="router-link-active" data-toggle="collapse"
                 data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-sign-out-alt"></i>
-                <span>Cerrar sesión</span>
+                <span id="tamaño">Cerrar sesión</span>
             </a>
         </div>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <div *ngIf="Close">
-                    <a class="collapse-item" [routerLink]="['/login']" routerLinkActive="router-link-active"><b> Iniciar sesión
+                    <a class="collapse-item" id="tamaño" [routerLink]="['/login']"
+                        routerLinkActive="router-link-active"><b> Iniciar sesión
                         </b></a>
                 </div>
                 <div *ngIf="Open">
                     <a class="collapse-item" [routerLink]="['/login']" (click)="removeLocal()"
-                        routerLinkActive="router-link-active"><b> Cerrar sesión </b></a>
+                        routerLinkActive="router-link-active" id="tamaño"><b> Cerrar sesión </b></a>
                 </div>
                 <div *ngIf="Close">
-                <a class="collapse-item" [routerLink]="['/clienteregistro']"
-                    routerLinkActive="router-link-active"><b>Registrarse</b></a>
-                <a class="collapse-item" href="forgot-password.html"><b>¿Contraseña olvidada?</b></a>
-                <div class="collapse-divider"></div>
+                    <a class="collapse-item" [routerLink]="['/clienteregistro']" routerLinkActive="router-link-active"
+                        id="tamaño"><b>Registrarse</b></a>
+                    <a class="collapse-item" href="forgot-password.html"><b>¿Contraseña olvidada?</b></a>
+                    <div class="collapse-divider"></div>
                 </div>
             </div>
         </div>
     </li>
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Interface
+    <div *ngIf="Open">
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/empleadogestion']" routerLinkActive="router-link-active">
+                <i class="fas fa-cog"></i>
+                <span style="margin-left: 5px;">GESTIÓN EMPLEADO</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/clientegestion']" routerLinkActive="router-link-active">
+                <i class="fas fa-cog"></i>
+                <span style="margin-left: 5px;">GESTIÓN CLIENTE</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/habitaciongestion']" routerLinkActive="router-link-active">
+                <i class="fas fa-cog"></i>
+                <span style="margin-left: 5px;">GESTIÓN HABITACIÓN</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/reservagestion']" routerLinkActive="router-link-active">
+                <i class="fas fa-cog"></i>
+                <span style="margin-left: 5px;">GESTIÓN RESERVA</span></a>
+        </li>
     </div>
 </ul>
+
 <!-- End of Sidebar -->

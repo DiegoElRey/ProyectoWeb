@@ -1,3 +1,7 @@
 #accordionSidebar{
   position: fixed;
 }
+
+#tamaño{
+  font-size: 15px;
+}

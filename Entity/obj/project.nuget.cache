@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lHcq95cje9N7fVZ89AI1IbmtLwkFSUCanKZzmOcQx78XVNfv4Hap7l8KQtL08l/6pr0+cP8dM+aiI4aD4LNwyA==",
+  "dgSpecHash": "+jFJdpvEdZyzEeLQrAEgHRvliVry4BLPFaHvk/8DE+neJWSA73TEP7IbUqcoGMlzg669/5XMzVbTE7V6Bhueow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\Dasp2\\OneDrive\\Escritorio\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dasp2\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],

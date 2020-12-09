@@ -2,6 +2,9 @@ body {
     background: #e0e5ec;
   }
 
+  #centrar{
+    margin-left: 170px;
+  }
   h1 {
     position: relative;
     text-align: center;

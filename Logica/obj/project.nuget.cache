@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ixzwD8PH6HtxuDSdfEE0IdN4pZ36Y7sXOMvbmHHCkZvALyPjRtFubTwdQSrdQtIg3JhGAEbIaU9DZiz2CfYZJQ==",
+  "dgSpecHash": "39VA6cvnH3Ymc9dtdmDdgvc0g8NBoN7Mno7WIvch+Z6FHbUhL1mbDhkYCHeulIMfSewN5A+OnlOaSolZzOpWZQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Logica\\Logica.csproj",
+  "projectFilePath": "C:\\Users\\Dasp2\\OneDrive\\Escritorio\\HotelNeruda\\ProyectoWeb\\Logica\\Logica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dasp2\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Dasp2\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

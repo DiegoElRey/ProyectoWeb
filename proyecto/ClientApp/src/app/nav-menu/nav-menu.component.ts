@@ -13,6 +13,7 @@ export class NavMenuComponent implements OnInit {
   user: User;
   Close: boolean;
   Open: boolean;
+  sesion: Boolean = false ;
   constructor(private authenticationService: AuthenticationService, private router: Router){
     if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/login']);

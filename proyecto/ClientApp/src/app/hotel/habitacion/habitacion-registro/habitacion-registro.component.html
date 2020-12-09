@@ -1,69 +1,68 @@
-
-    <title>REGISTRO DE HABITACIONES</title>
-<br><div align="center"><img src="assets/registrar.png" alt="Logo">
-    <h1>REGISTRO DE HABITACIONES</h1>
-</div><br>
-<div id="divcontainer" class="forms">
-    <form id="formularioRegistro" [formGroup]="formregistro">
-
-        <div class="form-group">
-            <label>Numero de Habitacion</label>
-            <input type="text" id="idHabitacion" name="idHabitacion" [ngClass]="{'is-invalid': control.idHabitacion.errors && control.idHabitacion.touched}"
-                 formControlName="idHabitacion" placeholder="Numero de Habitacion">
-            <div *ngIf="control.idHabitacion.errors" class="invalid-feedback">
-                <div *ngIf="control.idHabitacion.errors.required">Se requiere el numero de la habitacion</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Tipo de Habitacion</label>
-            <select id="tipo" name="tipo" [ngClass]="{'is-invalid': control.tipo.errors && control.tipo.touched}"
-            formControlName="tipo">
-            <option value="seleccionar">Seleccionar</option>
-            <option value="familiar">Simple</option>
-            <option value="doble">Doble</option>
-            <option value="triple">Triple</option>
-            <option value="familiar">Familiar</option>
-        </select>
-            <div *ngIf="control.tipo.errors" class="invalid-feedback">
-                <div *ngIf="control.tipo.errors.required">Se requiere el tipo de habitacion</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Numero de Personas</label>
-            <input type="number" id="nPersonas" name="nPersonas" [ngClass]="{'is-invalid': control.nPersonas.errors && control.nPersonas.touched}"
-            formControlName="nPersonas">
-            <div *ngIf="control.nPersonas.errors" class="invalid-feedback">
-                <div *ngIf="control.nPersonas.errors.required">Se requiere el numero de personas</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Estado</label>
-            <select id="estado" name="estado" [ngClass]="{'is-invalid': control.estado.errors && control.estado.touched}"
-            formControlName="estado">
-            <option value="seleccionar">Seleccionar</option>
-            <option value="ocupado">Ocupado</option>
-            <option value="desocupado">Desocupado</option>
-            <option value="mantenimiento">En Mantenimiento</option>
-        </select>
-            <div *ngIf="control.estado.errors" class="invalid-feedback">
-                <div *ngIf="control.estado.errors.required">Se requiere el estado de la habitacion</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Precio</label>
-            <input  type="number" id="precio" name="precio" [ngClass]="{'is-invalid': control.precio.errors && control.precio.touched}"
-            formControlName="precio" placeholder="Precio de Habitacion">
-            <div *ngIf="control.precio.errors" class="invalid-feedback">
-                <div *ngIf="control.precio.errors.required">Se requiere el precio de la habitacion</div>
-            </div>
-        </div>
-    </form>
-</div>
+<title>REGISTRO DE HABITACIONES</title>
 <br>
-<button id="divcontainer2" type="reset" class="btn btn-primary" (click)="onSubmit()"
-    [disabled]="formregistro.invalid" [routerLink]='["/habitacionconsulta"]'>
-    Guardar</button>
+<div class="centrar">
+    <div class="card" style="border-radius: 30px;" id="form">
+        <form name="form" class="centrarForm" (ngSubmit)="f.form.valid && add()" #f="ngForm" novalidate
+            autocomplete="off">
+            <br>
+            <h1 style="text-align: center;">Registrar habitación</h1>
+            <br>
+            <div class="form-group">
+                <input type="text" class="form-control" name="idHabitacion" [(ngModel)]="habitacion.idHabitacion"
+                    #idHabitacion="ngModel" placeholder="Número de la habitación"
+                    [ngClass]="{ 'is-invalid': idHabitacion.touched && idHabitacion.invalid }" required />
+                <div *ngIf="idHabitacion.touched && idHabitacion.invalid" class="invalid-feedback">
+                    <div *ngIf="idHabitacion.errors.required">El numero de la habitación es requerida</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <select class="form-control" name="tipo" [(ngModel)]="habitacion.tipo" #tipo="ngModel" required>
+                    <option value="seleccionar tipo">Seleccionar tipo</option>
+                    <option value="familiar">Simple</option>
+                    <option value="doble">Doble</option>
+                    <option value="triple">Triple</option>
+                    <option value="familiar">Familiar</option>
+                </select>
+                <div *ngIf="tipo.touched && tipo.invalid" class="invalid-feedback">
+                    <div *ngIf="tipo.errors.required">El tipo es requerido</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="number" class="form-control" name="nPersonas" [(ngModel)]="habitacion.nPersonas"
+                    #nPersonas="ngModel" placeholder="Número de personas"
+                    [ngClass]="{ 'is-invalid': nPersonas.touched && nPersonas.invalid }" required />
+                <div *ngIf="nPersonas.touched && nPersonas.invalid" class="invalid-feedback">
+                    <div *ngIf="nPersonas.errors.required">El número de personas es requerido</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <select class="form-control" name="estado" [(ngModel)]="habitacion.estado" #estado="ngModel" required>
+                    <option value="seleccionar estado">Seleccionar estado</option>
+                    <option value="ocupado">Ocupado</option>
+                    <option value="desocupado">Desocupado</option>
+                    <option value="mantenimiento">En Mantenimiento</option>
+                </select>
+                <div *ngIf="estado.touched && estado.invalid" class="invalid-feedback">
+                    <div *ngIf="estado.errors.required">El estado es requerido</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="precio" [(ngModel)]="habitacion.precio"
+                    #precio="ngModel" placeholder="Precio de la habitación"
+                    [ngClass]="{ 'is-invalid': precio.touched && precio.invalid }" required />
+                <div *ngIf="precio.touched && precio.invalid" class="invalid-feedback">
+                    <div *ngIf="precio.errors.required">El precio de personas es requerido</div>
+                </div>
+            </div>
+            <!-- Sign in button -->
+            <button style="border-radius: 30px;" class="btn btn-outline-primary" type="submit"
+                [disabled]="!f.form.valid"><b>Registrar</b></button>
+        </form>
+        <br>
+    </div>
+</div>
+<br><br>

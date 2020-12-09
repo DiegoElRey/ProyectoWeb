@@ -115,11 +115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\Dasp2\\OneDrive\\Escritorio\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "c:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj",
+      "projectPath": "C:\\Users\\Dasp2\\OneDrive\\Escritorio\\HotelNeruda\\ProyectoWeb\\Entity\\Entity.csproj",
       "packagesPath": "C:\\Users\\Dasp2\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Dasp2\\Desktop\\HotelNeruda\\ProyectoWeb\\Entity\\obj\\",
+      "outputPath": "C:\\Users\\Dasp2\\OneDrive\\Escritorio\\HotelNeruda\\ProyectoWeb\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dasp2\\AppData\\Roaming\\NuGet\\NuGet.Config",

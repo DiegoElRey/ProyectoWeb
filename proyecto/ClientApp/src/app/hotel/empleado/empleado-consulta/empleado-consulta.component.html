@@ -1,15 +1,12 @@
-
 <title>CONSULTAR EMPLEADOS</title>
 <br>
-<div align="center"><img src="assets/consultar.png" alt="Logo"><br>
-    <h1>CONSULTAR EMPLEADOS</h1>
-</div><br>
 
 <form class="form-inline" class="container" id="Buscador">
     <input class="form-control mr-sm-2" name="filtroEmpleado" [(ngModel)]="searchText" type="text" placeholder="Buscar por Cedula" aria-label="Search">
 </form><br><br>
 
 <div class="table-responsive" id="rcorners1">
+    <h6 style="text-align: center;">EMPLEADOS</h6>
     <table class="table table-bordered" id="myTable" *ngIf='empleados && empleados.length'>
         <thead>
             <tr class="thead-dark">
@@ -30,7 +27,7 @@
                
             </tr>
         </thead>
-        <tbody id="tbodypulsacion" class="table-primary">
+        <tbody class="table-primary">
             <tr *ngFor="let empleado of empleados|filtroEmpleado:searchText |slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
                 <td>{{ empleado.cedula}} </td>
@@ -50,3 +47,4 @@
     </table>
     <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="empleados.length"></ngb-pagination>
 </div>
+<br><br><br><br><br><br>

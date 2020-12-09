@@ -11,46 +11,17 @@ import { Habitacion } from '../../models/habitacion';
   styleUrls: ['./habitacion-registro.component.css']
 })
 export class HabitacionRegistroComponent implements OnInit {
-  formregistro: FormGroup;
   habitacion: Habitacion;
   constructor(private habitacionService: HabitacionService, private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
   ngOnInit() {
     this.habitacion = new Habitacion();
-    this.buildForm();
-  }
-
-  private buildForm() {
-    this.habitacion = new Habitacion();
-    this.habitacion.idHabitacion;
-    this.habitacion.tipo = 'seleccionar';
-    this.habitacion.estado = 'seleccionar';
-    this.habitacion.nPersonas;
-    this.habitacion.precio;
-
-    this.formregistro = this.formBuilder.group({
-      idHabitacion: [this.habitacion.idHabitacion, [Validators.required, Validators.maxLength(4)]],
-      tipo: [this.habitacion.tipo, Validators.required],
-      estado: [this.habitacion.estado, Validators.required],
-      nPersonas: [this.habitacion.nPersonas, Validators.required],
-      precio: [this.habitacion.precio, Validators.required],
-    });
-  }
-
-  get control() {
-    return this.formregistro.controls;
-  }
-
-  onSubmit() {
-    if (this.formregistro.invalid) {
-      return;
-    }
-    this.add();
+    this.habitacion.tipo = 'seleccionar tipo';
+    this.habitacion.estado = 'seleccionar estado';
   }
 
   add() {
-    this.habitacion = this.formregistro.value;
     this.habitacionService.post(this.habitacion).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)

@@ -7,7 +7,11 @@ a{
 
     color: #ffffff;
 }
-
+#centrar{
+  margin-left: 400px;
+  margin-right: 210px;
+  border-radius: 20px;
+}
 h1{
 
     font-size: 30px;

@@ -18,6 +18,7 @@ export class ReservaRegistroComponent implements OnInit {
   habitacion: Habitacion;
   reserva: Reserva;
   habitaciones: Habitacion[];
+  validarFecha: boolean;
   constructor(private habitacionService: HabitacionService,private reservaService: ReservaService, private rutaActiva: ActivatedRoute, private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
@@ -27,6 +28,10 @@ export class ReservaRegistroComponent implements OnInit {
     this.habitacionService.getId(IdHabitacion).subscribe(p => {
       this.habitacion = p;
       this.habitacion != null ? alert('Se Consulta la habitacion') : alert('Error al Consultar');
+      if(this.habitacion == null){
+        this.validarFecha = false;
+      }
+      this.validarFecha = true;
     });
 
     this.buildForm();

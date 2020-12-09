@@ -18,6 +18,7 @@ export class ClienteRegistroComponent implements OnInit {
 
   ngOnInit() {
     this.cliente = new Cliente();
+    this.cliente.sexo = "Seleccionar sexo";
   }
 
   private ValidaCedula(control: AbstractControl) {

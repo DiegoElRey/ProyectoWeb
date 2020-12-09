@@ -11,37 +11,15 @@ import { Empleado } from '../../models/empleado';
   styleUrls: ['./empleado-registro.component.css']
 })
 export class EmpleadoRegistroComponent implements OnInit {
-  formregistro: FormGroup;
   empleado: Empleado;
   constructor(private empleadoService: EmpleadoService, private formBuilder: FormBuilder,
   private modalService:NgbModal) { }
 
   ngOnInit() {
     this.empleado= new Empleado();
-    this.buildForm();
-  }
-
-  private buildForm() {
-    this.empleado = new Empleado();
-    this.empleado.cedula = '';
-    this.empleado.nombre = '';
-    this.empleado.apellido = '';
-    this.empleado.sexo = 'seleccionar';
-    this.empleado.cargo = 'seleccionar';
-    this.empleado.jornada = 'seleccionar';
-    this.empleado.jefe='seleccionar';
-
-      this.formregistro = this.formBuilder.group({
-      cedula: [this.empleado.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
-      nombre: [this.empleado.nombre, Validators.required],
-      apellido: [this.empleado.apellido, Validators.required],
-      sexo: [this.empleado.sexo, [Validators.required, this.ValidaSexo]],
-      edad: [this.empleado.edad, [Validators.required, Validators.min(18), this.ValidaEdad]],
-      cargo: [this.empleado.cargo, Validators.required],
-      jornada: [this.empleado.jornada, Validators.required],
-      telefono: [this.empleado.telefono, Validators.required],
-      jefe: [this.empleado.jefe, Validators.required],
-    });
+    this.empleado.sexo = "Seleccionar sexo";
+    this.empleado.cargo = "Seleccionar un cargo";
+    this.empleado.jornada = "Selecciona una jornada";
   }
 
   private ValidaCedula(control: AbstractControl) {
@@ -68,19 +46,7 @@ export class EmpleadoRegistroComponent implements OnInit {
     return null;
   }
 
-  get control() {
-    return this.formregistro.controls;
-  }
-
-  onSubmit() {
-    if (this.formregistro.invalid) {
-      return;
-    }
-    this.add();
-  }
-
   add() {
-    this.empleado = this.formregistro.value;
     this.empleadoService.post(this.empleado).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)

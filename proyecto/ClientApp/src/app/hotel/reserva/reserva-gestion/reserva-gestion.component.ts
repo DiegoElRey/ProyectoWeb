@@ -13,39 +13,29 @@ import { Reserva } from '../../models/reserva';
 })
 export class ReservaGestionComponent implements OnInit {
   habitaciones: Habitacion[];
-  verificar: boolean = false;
+  verificar: boolean;
   registrar: boolean = false;
   public cliente: Cliente;
   reserva: Reserva;
-  
-  hoveredDate: NgbDate | null = null;
-
-  fromDate: NgbDate | null;
-  toDate: NgbDate | null;
 
   constructor(private habitacionService: HabitacionService, private clienteService: ClienteService,
     private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
-      this.fromDate = calendar.getToday();
-    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
-    }
-  FechaEntrada
-  FechaSalida
-  ngOnInit(){
-    
+  }
+  ngOnInit() {
     this.cliente = new Cliente();
   }
-  BuscarCedula(){
-    this.clienteService.getId(this.cliente.idcliente).subscribe(p =>{
-      if(p != null){
+  BuscarCedula() {
+    this.clienteService.getId(this.cliente.cedula).subscribe(p => {
+      if (p != null) {
         this.verificar = true;
-        if(this.verificar == true){
+        alert("Cliente encontrado con éxito.");
+        this.cliente = p;
+        if (this.verificar == true) {
           this.habitacionService.get().subscribe(result => {
             this.habitaciones = result;
           });
-          alert("Cliente encontrado con éxito.");
-          this.cliente = p;
-      }
-      }else{
+        }
+      } else {
         this.verificar = false;
         this.registrar = true;
         alert("Cliente no registrado.");
@@ -54,30 +44,6 @@ export class ReservaGestionComponent implements OnInit {
   }
 
   /************************** DATE PICKER**********************/
-  
-
-  onDateSelection(date: NgbDate) {
-    if (!this.fromDate && !this.toDate) {
-      this.fromDate = date;
-    } else if (this.fromDate && !this.toDate && date && date.after(this.fromDate)) {
-      this.toDate = date;
-    } else {
-      this.toDate = null;
-      this.fromDate = date;
-    }
-  }
-
-  isHovered(date: NgbDate) {
-    return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
-  }
-
-  isInside(date: NgbDate) {
-    return this.toDate && date.after(this.fromDate) && date.before(this.toDate);
-  }
-
-  isRange(date: NgbDate) {
-    return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || this.isInside(date) || this.isHovered(date);
-  }
 
   validateInput(currentValue: NgbDate | null, input: string): NgbDate | null {
     const parsed = this.formatter.parse(input);
