@@ -51,7 +51,7 @@ export class EmpleadoRegistroComponent implements OnInit {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)
         messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: se ha agregado un empleado';
+        messageBox.componentInstance.cuerpo = "Info: se ha agregado un empleado";
         this.empleado = p;
       }
     });

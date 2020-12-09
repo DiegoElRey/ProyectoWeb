@@ -2,60 +2,62 @@
 <br>
 <div class="centrar">
     <div class="card" style="border-radius: 30px;" id="form">
-        <form name="form" class="centrarForm" (ngSubmit)="f.form.valid" #f="ngForm" novalidate
-            autocomplete="off">
+        <form name="form" class="centrarForm" (ngSubmit)="f.form.valid" #f="ngForm" novalidate autocomplete="off">
             <br>
             <div class="form-group" style="margin-right: 0px;">
-                
-                    <div class="input-group-prepend" style="margin-bottom: -43px;">
-                        <button class="btn btn-outline-primary" (click)="BuscarCedula()" type="button"
-                            style="margin-right: 0px; font-size: 10px;"><b>Buscar</b></button>
+                <h3 style="text-align: center;">GESTIONAR RESERVA</h3>
+                <br>
+                <div class="input-group-prepend" style="margin-bottom: -43px;">
+                    <button class="btn btn-outline-primary" (click)="BuscarCedula()" type="button"
+                        style="margin-right: 0px; font-size: 10px;"><b>Buscar</b></button>
+                </div>
+
+                <div class="form-group" style="margin-left: 73px;">
+                    <input type="text" style="font-size: 16px;" class="form-control" name="cedula"
+                        [(ngModel)]="cliente.cedula" #cedula="ngModel" placeholder="Numero de identificación"
+                        [ngClass]="{ 'is-invalid': cedula.touched && cedula.invalid }" required />
+                    <div *ngIf="cedula.touched && cedula.invalid" class="invalid-feedback">
+                        <div *ngIf="cedula.errors.required">El numero de identificación es requerido</div>
                     </div>
-                
-                    <div class="form-group" style="margin-left: 73px;">
-                        <input type="text" style="font-size: 16px;" class="form-control" name="cedula" [(ngModel)]="cliente.cedula" #cedula="ngModel"
-                            placeholder="Numero de identificación"
-                            [ngClass]="{ 'is-invalid': cedula.touched && cedula.invalid }" required />
-                        <div *ngIf="cedula.touched && cedula.invalid" class="invalid-feedback">
-                            <div *ngIf="cedula.errors.required">El numero de identificación es requerido</div>
-                        </div>
-                    </div>
+                </div>
+
             </div>
             <hr>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="FechaEntrada">FechaEntrada</label>
-                        <input type="date" class="form-control" name="FechaEntrada" [(ngModel)]="reserva.FechaEntrada"
-                            required />
+            <!-- <div class="row">
+                <div class="form-group" style="margin-left: 73px;">
+                    <input type="date" style="font-size: 16px;" class="form-control" name="fechaentrada"
+                        [(ngModel)]="reserva.fechaentrada" #fechaentrada="ngModel" placeholder="DD/MM/AAAA"
+                        [ngClass]="{ 'is-invalid': fechaentrada.touched && fechaentrada.invalid }" required />
+                    <div *ngIf="fechaentrada.touched && fechaentrada.invalid" class="invalid-feedback">
+                        <div *ngIf="fechaentrada.errors.required">La fecha de entrad es requerida</div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="FechaSalida">FechaSalida</label>
-                        <input type="date" class="form-control" name="FechaSalida" [(ngModel)]="reserva.FechaSalida"
+                        <label for="fechasalida">Fecha de salida</label>
+                        <input type="date" class="form-control" name="fechasalida" [(ngModel)]="reserva.fechasalida"
                             required />
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div *ngIf="verificar">
+            <div *ngIf="verificar" style="margin-left: -135px;">
                 <div class="col-lg-14 col-md-7" style="margin-left: 58px;">
-                    <div class="form-group">
+                    <div class="form-group" style="margin-right: -335px;">
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" name="nombre" [(ngModel)]="cliente.nombre" required
                             disabled />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-right: -335px;">
                         <label for="apellido">Apellido</label>
                         <input type="text" class="form-control" name="apellido" [(ngModel)]="cliente.apellido" required
                             disabled />
                     </div>
                 </div>
-            </div>
-            <br><br>
-            <!-- Card -->
-            <div *ngIf="verificar">
+
+                <br><br>
+                <!-- Card -->
+
                 <div class="card-deck" style="margin-left: 40px;">
                     <div class="row">
                         <div id="cardr" style="left: 5%; background-color:#007bff4f;" class="card"
@@ -74,13 +76,13 @@
                             <!-- Card content -->
                             <div class="card-body">
 
-                                <h3 class="card-title">Tipo de habitacion: {{habitacion.tipo}}</h3>
+                                <h3 class="card-title"><b>Tipo de habitacion:</b>  {{habitacion.tipo}}</h3>
 
-                                <h3 class="card-title">Numero de personas: {{habitacion.nPersonas}}</h3>
+                                <h3 class="card-title"><b>Numero de personas:</b> {{habitacion.nPersonas}}</h3>
 
-                                <h3 class="card-title">Precio: {{habitacion.precio}}</h3>
+                                <h3 class="card-title"><b>Precio:</b> {{habitacion.precio}}</h3>
 
-                                <h3 class="card-title">Estado: {{habitacion.estado}}</h3>
+                                <h3 class="card-title"><b>Estado:</b> {{habitacion.estado}}</h3>
 
                             </div>
                             <div class="card-footer">
@@ -95,15 +97,17 @@
                     </div>
                     <br><br>
                 </div>
-                <div *ngIf="verificar">
-                    <button class="btn btn-outline-primary"
-                        style="margin-left: 76px; color: black !important; border-radius: 10px;"><b>Registrar</b></button>
-                </div>
+
+                <button class="btn btn-outline-primary"
+                    style="margin-left: 76px; color: black !important; border-radius: 10px;"><b>Registrar</b></button>
+
+
             </div>
-            <div *ngIf="verificar == false && registrar == true">
-                <label for="mensaje" style="display: flex; margin-left: 76px;">Haga click en registrar</label>
+            <div *ngIf="registrar" style="margin-left: -77px;">
+                <label for="mensaje" style="display: flex; margin-left: 76px;">Haga click en registrarse para ir a
+                    registrarse</label>
                 <a type="button" class="btn btn-outline-primary" [routerLink]='["/clienteregistro"]'
-                    style="margin-left: 76px; color: black !important; border-radius: 10px;"><b>Registrar</b></a>
+                    style="margin-left: 76px; color: black !important; border-radius: 10px;"><b>Registrarse</b></a>
             </div>
         </form>
         <br>

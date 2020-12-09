@@ -41,7 +41,7 @@ export class ClienteService {
       return this.http.get<Cliente>(url, httpOptions)
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
-        catchError(this.handleErrorService.handleError<Cliente>('Buscar Reserva', null))
+        catchError(this.handleErrorService.handleError<Cliente>('Buscar Cliente', null))
       );
   }
 
