@@ -30,7 +30,7 @@ export class ReservaService {
   }
 
   getId(IdHabitacion: string): Observable<Reserva> {
-    const url = `${this.baseUrl + 'api/reserva'}/${IdHabitacion}`;
+    const url = `${this.baseUrl + 'api/Reserva'}/${IdHabitacion}`;
       return this.http.get<Reserva>(url, httpOptions)
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
@@ -39,7 +39,7 @@ export class ReservaService {
   }
 
   post(reserva: Reserva): Observable<Reserva> {
-    return this.http.post<Reserva>(this.baseUrl + 'api/Factura', reserva)
+    return this.http.post<Reserva>(this.baseUrl + 'api/Reserva', reserva)
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<Reserva>('Registrar Reserva', null))

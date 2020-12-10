@@ -23,6 +23,7 @@ export class ReservaGestionComponent implements OnInit {
   }
   ngOnInit() {
     this.cliente = new Cliente();
+    this.reserva = new Reserva();
   }
   BuscarCedula() {
     this.clienteService.getId(this.cliente.cedula).subscribe(p => {
